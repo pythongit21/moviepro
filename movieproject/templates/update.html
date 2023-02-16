@@ -1,0 +1,11 @@
+{% extends 'basetem.html' %}
+{% block body %}
+<div class="container">
+  <h3>Update Movie</h3><br>
+  <form method="POST" enctype="multipart/form-data" class="center">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success">
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'basetem.html' %}
+{% block body %}
+<h1 style="color:white; margin-left:20px">Movies</h1><br><br>
+<div class="container">
+    <div class="row">
+            {% for i in movie %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="{% url 'movieapp:details' i.id %}"><img src="{{i.img.url}}" class="card-img-top" alt="{{i.name}}" width="80px" height="220px"></a>
+                <div class="card-body">
+                    <p class="card-text text-center"><h5>{{i.name}}</h5></p>
+                    <p class="text-left">{{i.year}}</p>
+                </div>
+            </div>
+            <br><br>
+        </div>
+            {% endfor %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="{% url 'movieapp:add' %}"><img src="imgs/istockphoto-1156275050-612x612.jpg" class="card-img-top" alt="new movie" width="80px" height="220px"></a>
+                <div class="card-body">
+                    <p class="card-text text-center"><h5>Add new</h5></p>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

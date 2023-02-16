@@ -1,0 +1,23 @@
+{% extends 'basetem.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{m.img.url}}" width="400px" height="500px">
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-5" style="color:white">
+            <h2>{{m.name}}</h2><br>
+            <h4>Year: {{m.year}}</h4><br>
+            <h4>Price: ₹{{m.price}}</h4><br>
+            <a class="btn btn-warning" href="{% url 'movieapp:update' m.id %}">Update</a>&nbsp;
+            <a class="btn btn-danger" href="{% url 'movieapp:delete' m.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

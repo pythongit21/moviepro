@@ -1,0 +1,8 @@
+{% extends 'basetem.html' %}
+{% block body %}
+<form method="POST" class="text-center">
+    {% csrf_token %}
+    <h5 style="color:red">Are you sure?</h5><br>
+    <input class="btn bth-danger" style="background-color:red; color:white" type="submit">
+</form>
+{% endblock %}

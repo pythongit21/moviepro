@@ -1,0 +1,28 @@
+{% extends 'basetem.html' %}
+{% block body %}
+<form method="POST"enctype="multipart/form-data">
+  {% csrf_token %}
+  <h3>Add Movie</h3><br>
+  <div class="row">
+    <div class="col-md-5">
+      <input type="text" name="name" class="form-control" placeholder="Title">
+    </div>
+    <div class="col-md-5">
+      <input type="text" name="year" class="form-control" placeholder="Year">
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-5">
+      <input type="text" name="price" class="form-control" placeholder="Price">
+    </div>
+    <div class="col-md-5">
+      <input type="file" name="img">
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-10">
+      <input type="submit" class="form-control btn btn-success" aria-label="Last name">
+    </div>
+  </div><br>
+</form>
+{% endblock %}
